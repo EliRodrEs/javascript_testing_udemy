@@ -47,7 +47,7 @@ it('should throw and error if no value is passed into the function', () => {
     add()
   }
   
-  expect(resultFn).toThrow()
+  expect(resultFn).toThrow(/is not iterable/) //This string parameter narrows out the exact error you expect to receive
 })
 
 it('should throw an error if provided with multiple arguments instead of an array', () => {
@@ -57,5 +57,5 @@ it('should throw an error if provided with multiple arguments instead of an arra
     add(num1, num2)
   }
   
-  expect(resultFn).toThrow()
+  expect(resultFn).toThrow(/is not iterable/) 
 })
