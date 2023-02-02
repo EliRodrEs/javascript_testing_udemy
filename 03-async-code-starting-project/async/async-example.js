@@ -1,21 +1,21 @@
-import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken'
 
 export function generateToken(userEmail, doneFn) {
-  jwt.sign({ email: userEmail }, 'secret123', doneFn);
+  jwt.sign({ email: userEmail }, 'secret123', doneFn)
 }
 
 export function generateTokenPromise(userEmail) {
   const promise = new Promise((resolve, reject) => {
     jwt.sign({ email: userEmail }, 'secret123', (error, token) => {
       if (error) {
-        reject(error);
+        reject(error)
       } else {
-        resolve(token);
+        resolve(token)
       }
-    });
-  });
+    })
+  })
 
-  return promise;
+  return promise
 }
 
 // generateToken('test@test.com', (err, token) => {
