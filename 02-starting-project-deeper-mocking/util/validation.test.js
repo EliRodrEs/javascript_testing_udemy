@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { it, expect } from 'vitest'
 import { validateNotEmpty } from './validation'
 
 it('should throw an error if an empty string is provided', () => {
